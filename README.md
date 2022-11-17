@@ -13,7 +13,7 @@
 * Model_test.py for general aesthetic model testing.
 * Model_test_AVA.py for general aesthetic model testing on AVA database.
 * Model_train.py for general aesthetic model training.
-* Model_fineTune.py for personalized aesthetic model fine-tuning. Pre-trained model can be downloaded [here](https://pan.baidu.com/s/100CWrNBvTpWlZsHqA5c1AA?pwd=746w)
+* Model_fineTune.py for personalized aesthetic model fine-tuning. Pre-trained model can be downloaded [here](https://pan.baidu.com/s/1qWGSb882Y3dmHbGi3Bg72g?pwd=uaye)
 
 * If you want to train our general model, you need download PsychoFlickr, AVA and AADB databases.
 
