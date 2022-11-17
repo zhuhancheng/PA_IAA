@@ -429,12 +429,9 @@ def train_model(model, criterion, optimizer, dataloader_train, dataloader_valid,
                 if epoch == 0:
                     print('no train srocc: %4f' %sp)
                     spearman_test = sp
-
-                if epoch_loss < best_loss:
-                    best_loss = epoch_loss
-
-                if sp > best_spearman:
-                    best_spearman = sp
+      
+                best_loss = epoch_loss
+                best_spearman = sp
 
     time_elapsed = time.time() - since
     print('Training complete in {:.0f}m {:.0f}s'.format(
