@@ -446,17 +446,13 @@ def train_model(model, criterion, optimizer, lr_scheduler, dataloader_train, dat
                 if phase == 'val':
                     test_loss.append(epoch_loss)
                     spp = computeSpearman(dataloader, model)[0]
-                    if epoch_loss < best_loss:
-                        best_loss = epoch_loss
-                        print('new best loss = %f' % epoch_loss)
-                    if spp > best_spp:
-                        best_spp = spp
-                        best_model = copy.deepcopy(model)
-                        print('new best srocc = %f' % spp)
+                    best_loss = epoch_loss
+                    best_spp = spp
+                    best_model = copy.deepcopy(model)
                     print('best loss: %f, best srocc: %f' % (epoch_loss, best_spp))
     # Save model
     torch.save(model.cuda(),
-                'Personality_Model/AVA_Personality_normalized_inception_DB.pt')
+                'Personality_Model/AVA_Personality_normalized_inception.pt')
     time_elapsed = time.time() - since
     print('Training complete in {:.0f}m {:.0f}s'.format(
         time_elapsed // 60, time_elapsed % 60))
@@ -536,7 +532,6 @@ for i in range(20):
     net1 = AesModel(10, 0.5, num_ftrs)
     net2 = PerModel(1, 0.5, num_ftrs)
     net3 = convNet(resnet=model_ft, aesnet=net1, pernet=net2)
-    # net_2 = (torch.load('Personality_Model/FlickrAES_Personality_normalized_resnet18.pt'))
     model_ft = net3
 
     #device = cuda
