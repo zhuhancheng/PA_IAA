@@ -1,1 +1,1 @@
-Put download pre-trained model in this folder
+Put downloaded pre-trained models in this folder
